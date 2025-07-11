@@ -1,0 +1,115 @@
+/* style.css (COMPLETE REPLACEMENT) */
+
+/* --- THEME VARIABLES --- */
+:root {
+    --bg-color: #000000;
+    --text-color: #00FF41;
+    --user-color: #9effb6;
+    --response-color: #33FF77;
+    --error-color: #FF0000;
+    --accent-color: #00FF41;
+}
+
+body[data-theme='amber'] {
+    --bg-color: #1a1000;
+    --text-color: #FFB000;
+    --user-color: #FFD700;
+    --response-color: #FFC340;
+    --error-color: #FF4500;
+    --accent-color: #FFB000;
+}
+
+body[data-theme='sentinel_blue'] {
+    --bg-color: #02081a;
+    --text-color: #61dafb;
+    --user-color: #bbe1fa;
+    --response-color: #89ddff;
+    --error-color: #f77272;
+    --accent-color: #61dafb;
+}
+
+/* --- Global Styles --- */
+body, html {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'VT323', monospace;
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+/* ... keep your existing styles for terminal-container, terminal-output, etc. ... */
+/* Make sure to replace hardcoded colors with var() functions, for example: */
+
+#terminal-container {
+    padding: 15px;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    cursor: text;
+    overflow-y: auto;
+}
+#terminal-container::-webkit-scrollbar { display: none; }
+#terminal-container { -ms-overflow-style: none; scrollbar-width: none; }
+
+.output-line { line-height: 1.4; }
+.system-message { color: var(--text-color); }
+.user-command { color: var(--user-color); }
+.error-message { color: var(--error-color); }
+.response-message { color: var(--response-color); }
+.info-message { color: var(--accent-color); font-style: italic; }
+
+#input-line { display: flex; align-items: center; }
+#command-input {
+    background-color: transparent;
+    border: none;
+    color: var(--user-color);
+    font-family: 'VT323', monospace;
+    font-size: 20px;
+    flex-grow: 1;
+    padding: 0;
+    margin-left: 8px;
+}
+#command-input:focus { outline: none; }
+#command-input::after {
+    content: '_';
+    display: inline-block;
+    animation: blink 1s step-end infinite;
+}
+@keyframes blink {
+    from, to { color: transparent; }
+    50% { color: var(--user-color); }
+}
+
+/* --- Code Block Formatting --- */
+.code-block {
+    background-color: #0d1117;
+    border: 1px solid #30363d;
+    padding: 15px;
+    white-space: pre;
+    overflow-x: auto;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+}
+
+/* --- Action Buttons (Copy/PDF) --- */
+.action-buttons { display: block; margin-top: 5px; }
+.action-btn {
+    color: var(--accent-color);
+    background-color: #333;
+    border: 1px solid var(--accent-color);
+    padding: 2px 8px;
+    margin-right: 10px;
+    cursor: pointer;
+    font-family: 'VT323', monospace;
+    font-size: 16px;
+}
+.action-btn:hover { background-color: var(--accent-color); color: var(--bg-color); }
+
+/* --- Audio Player --- */
+audio { margin-top: 10px; width: 80%; max-width: 400px; }
+.hidden { display: none; }
