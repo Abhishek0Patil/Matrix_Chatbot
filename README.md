@@ -6,10 +6,9 @@ Welcome, Neo. You've jacked into the Matrix Operator Console, a fully interactiv
 Ask questions, generate code, summarize web pages, and access a suite of developer utilities, all from a retro-themed terminal interface.
 
 **➡️ Live Website: [wakeupneo.chat]([https://matrix-chatbot-neo.onrender.com](https://wakeupneo.onrender.com/))** 
-*(Replace with your actual Render URL!)*
 
 
-*(A screenshot of the live application)*
+
 
 ---
 
